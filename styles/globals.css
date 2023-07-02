@@ -2,26 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .heroBtn {
+    @apply px-6 py-2 m-5 text-sm border border-x-black rounded-full
+    tracking-widest transition-all hover:border-black hover:text-[#1D473B];
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .contactInput {
+    @apply outline-none border border-green-100 bg-slate-100/80 rounded-md
+    text-gray-300 p-4 transition-all focus:border-green-500 focus:text-gray-500 hover:border-green-300;
+  }
 }
