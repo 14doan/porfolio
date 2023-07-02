@@ -42,7 +42,7 @@ const About = ({ info }: Props) => {
       </motion.div>
 
       <div className="space-y-5 md:px-10 max-w-[400px]">
-        <h4 className="text-2xl font-semibold"> Why I'm doing this...</h4>
+        <h4 className="text-2xl font-semibold"> Why I&apos;m doing this...</h4>
         <p className="text-md">{info?.aboutBody} </p>
       </div>
     </div>
