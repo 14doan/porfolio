@@ -9,7 +9,7 @@ type Props = {
 };
 
 const About = ({ info }: Props) => {
-  console.log('getting', info.aboutImage);
+  // console.log('getting', info.aboutImage);
   return (
     <div className="relative flex flex-col h-screen text-center md:text-left md:flex-row max-w-6xl px-11 justify-center mx-auto items-center">
       <h3 className="absolute top-[4rem] tracking-[17px] pl-[17px] uppercase text-gray-600 text-xl">

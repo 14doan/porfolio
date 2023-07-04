@@ -16,7 +16,7 @@ const Hero = ({ info }: Props) => {
     loop: true,
     delaySpeed: 1000,
   });
-  // console.log('getting Hero:', urlFor(info?.heroImage).url());
+
   return (
     <div className="h-screen flex flex-col justify-center items-center ">
       <h3 className=" z-21 text-xl text-center uppercase text-gray-600 tracking-[17px] pl-[17px] ">

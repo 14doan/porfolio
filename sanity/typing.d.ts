@@ -4,7 +4,6 @@ interface SanityBody {
   _createAt: string;
   _id: string;
   _rev: string;
-  createdAt: string;
 }
 
 interface Image {
@@ -28,7 +27,7 @@ export interface Project extends SanityBody {
   title: string;
   summary: string;
   projectLink: string;
-  technologies: Skill;
+  technologies: Skill[];
 }
 
 export interface Info extends SanityBody {

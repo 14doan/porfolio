@@ -11,6 +11,7 @@ type Props = {
 
 const Projects = ({ projects }: Props) => {
   // const projects = [1, 2, 3, 4];
+
   return (
     <motion.div
       whileInView={{ opacity: [0, 1] }}
@@ -24,7 +25,7 @@ const Projects = ({ projects }: Props) => {
         {projects?.map((p, i) => (
           // eslint-disable-next-line react/jsx-key
           <div
-            key={p._id}
+            key={p?._id}
             className="snap-center w-screen h-screen flex flex-col flex-shrink-0 space-y-5 justify-center items-center p-5 sm:p-20 md:p-44 "
           >
             <motion.div
@@ -33,9 +34,9 @@ const Projects = ({ projects }: Props) => {
               viewport={{ once: true }}
             >
               {' '}
-              <Link href={p.projectLink} target="_blank">
+              <Link href={p?.projectLink} target="_blank">
                 <Image
-                  src={urlFor(p.projectImage).url()}
+                  src={urlFor(p?.projectImage).url()}
                   alt="chat project"
                   width={450}
                   height={450}
@@ -48,9 +49,9 @@ const Projects = ({ projects }: Props) => {
                 Project {i + 1}: {p?.title}
               </h4>
               <div className=" flex items-center justify-center  space-x-4">
-                {p?.technologies.map((t) => (
+                {p?.technologies?.map((t) => (
                   <Image
-                    key={t._key}
+                    key={t._id}
                     className="h-10 w-10"
                     src={urlFor(t.skillImage).url()}
                     alt="skill image"
