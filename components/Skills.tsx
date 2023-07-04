@@ -20,7 +20,7 @@ const Skills = ({ skills }: Props) => {
         opacity: [0, 1],
       }}
       viewport={{ once: true }}
-      className="min-h-screen relative flex flex-col justify-center items-center text-center max-w-[1500px] "
+      className="min-h-screen relative flex flex-col justify-center items-center text-center "
     >
       <h3 className="absolute top-[4rem] tracking-[17px] pl-[17px] uppercase text-gray-600 text-xl">
         Skills
