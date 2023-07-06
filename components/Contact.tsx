@@ -1,3 +1,4 @@
+import { Info } from '@/sanity/typing';
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -8,9 +9,11 @@ type Inputs = {
   subject: string;
   message: string;
 };
-type Props = {};
+type Props = {
+  info: Info;
+};
 
-const Contact = (props: Props) => {
+const Contact = ({ info }: Props) => {
   const {
     register,
     handleSubmit,
@@ -18,7 +21,7 @@ const Contact = (props: Props) => {
     // formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:dbdoan141@gmail.com?subject=${formData.subject}&body=hi I'm ${formData.name}. ${formData.message} (${formData.email})`;
+    window.location.href = `mailto:${info.email}?subject=${formData.subject}&body=hi I'm ${formData.name}. ${formData.message} (${formData.email})`;
   };
 
   // console.log(watch('example'));
@@ -33,15 +36,15 @@ const Contact = (props: Props) => {
         <div className="space-y-7">
           <div className="flex justify-center items-center space-x-5">
             <PhoneIcon className=" text-green-500 h-8 w-8 animate-pulse" />
-            <p className="text-xl">+4412349503</p>
+            <p className="text-xl">{info.phoneNumber}</p>
           </div>
           <div className="flex justify-center items-center space-x-5">
             <EnvelopeIcon className=" text-green-500 h-8 w-8 animate-pulse" />
-            <p className="text-xl">14doan@gmail.com</p>
+            <p className="text-xl">{info.email}</p>
           </div>
           <div className="flex justify-center items-center space-x-5">
             <MapPinIcon className=" text-green-500 h-8 w-8 animate-pulse" />
-            <p className="text-xl">Stratford, London, UK </p>
+            <p className="text-xl">{info.address} </p>
           </div>
         </div>
         <form

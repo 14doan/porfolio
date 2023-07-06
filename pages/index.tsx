@@ -55,7 +55,7 @@ export default function Home({ info, projects, skills, socials }: Props) {
 
       {/* contact */}
       <section className="snap-center" id="contact">
-        <Contact />
+        <Contact info={info} />
       </section>
 
       <div className="sticky w-full cursor-pointer bottom-5">
