@@ -51,7 +51,7 @@ const Contact = ({ info }: Props) => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 mx-auto w-fit"
         >
-          <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2">
+          <div className="flex flex-col sm:flex-row sm:space-x-2 sm:space-y-0 space-y-2">
             <input
               {...register('name')}
               className="contactInput"
